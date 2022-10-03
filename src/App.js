@@ -4,27 +4,12 @@ import { useState } from "react";
 import Card from "./components/Card";
 import axios from "axios";
 
-//Always keep the ZEN ATTITUDE in a MIND OVERFLOW !
+//Always keep the ZEN ATTITUDE in a MIND OVERFLOW!
 
 const App = () => {
   const [search, setSearch] = useState(null);
   const [movie, setMovie] = useState(false);
   const [trends, setTrends] = useState([]);
-  const trendsTitles = [
-    "dune",
-    "annette",
-    "mon frere",
-    "athena",
-    "footloose",
-    "yeh ballet",
-    "Aquaman",
-    "lou",
-    "carter",
-    "Halftime",
-    "red notice",
-    "The Father",
-    "Don't Look Up",
-  ];
 
   async function getTrends(title) {
     axios
@@ -38,6 +23,21 @@ const App = () => {
   }
 
   useEffect(() => {
+    const trendsTitles = [
+      "dune",
+      "annette",
+      "mon frere",
+      "athena",
+      "footloose",
+      "yeh ballet",
+      "Aquaman",
+      "lou",
+      "carter",
+      "Halftime",
+      "red notice",
+      "The Father",
+      "Don't Look Up",
+    ];
     trendsTitles.map((title) => getTrends(title));
   }, []);
 
