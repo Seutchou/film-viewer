@@ -13,7 +13,7 @@ const App = () => {
 
   async function getTrends(title) {
     axios
-      .get("http://www.omdbapi.com/?apikey=896e06bd&t=" + title)
+      .get("https://www.omdbapi.com/?apikey=896e06bd&t=" + title)
       .then((res) => {
         setTrends((prevTrends) => [...prevTrends, res.data]);
       })
@@ -43,7 +43,7 @@ const App = () => {
 
   async function getData(title) {
     axios
-      .get("http://www.omdbapi.com/?apikey=896e06bd&t=" + title)
+      .get("https://www.omdbapi.com/?apikey=896e06bd&t=" + title)
       .then((res) => {
         setMovie(res.data);
       })
